@@ -44,7 +44,7 @@ export VERSION_ID=$VERSION_ID
 printenv | grep -i version
 
 dnf --installroot=/mnt --releasever=$VERSION_ID group install -y core --use-host-config
-dnf --installroot=/mnt --releasever=$VERSION_ID -y glibc-langpack-en --use-host-config
+dnf --installroot=/mnt --releasever=$VERSION_ID -y install glibc-langpack-en --use-host-config
 
 mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.bak
 cp -L /etc/resolv.conf /mnt/etc
@@ -78,11 +78,10 @@ efibootmgr -c -d /dev/vda -p 1 -L "Fedora (Custom)" -l \\EFI\\FEDORA\\SHIMX64.EF
 
 efibootmgr
 
-gurb2-mkconfig -o /boot/grub2/grub.cfg
+grub2-mkconfig -o /boot/grub2/grub.cfg
 
 rm -f /etc/locatime
 
-systemd reload-daemon
 systemd-firstboot --prompt
 passwd
 
