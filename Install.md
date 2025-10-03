@@ -59,7 +59,7 @@ mount -a
 mount -t efivarfs efivarfs /sys/firmware/efi/efivars
 fixfiles -f onboot
 
-dnf install -y btrfs-progs efi-filesystem efibootmgr fwupd grub2-common grub2-efi-ia32 grub-efi-x64 grub2-pc grub2-pc-modules grub2-tools grub2-tools-efi grub2-tools-extra grub2-tools-minimal grubby kernel mactel-boot molutil shim-ia32 shim-x64
+dnf install -y kernel grubby grub2-common grub2-tools grub2-tools-minimal grub2-efi-x64 efibootmgr efi-filesystem shim-x64 grub2-tools-efi fwupd grub2-tools-extra btrfs-progs mokutil
 
 rm /boot/efi/EFI/fedora/grub.cfg 
 rm /boot/grub2/grub.cfg
