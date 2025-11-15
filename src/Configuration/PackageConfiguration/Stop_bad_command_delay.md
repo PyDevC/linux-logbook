@@ -43,7 +43,7 @@ MultipleMatch=warn
 # Allowed values are 'true' or 'false'
 #
 # default=true
-SoftwareSourceSearch=true
+SoftwareSourceSearch=false
 
 # Controls if the tool should look for similar command names and suggest
 # those instead.
