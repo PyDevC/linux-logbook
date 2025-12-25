@@ -1,3 +1,4 @@
+```bash
 sudo -s
 
 setenforce 0
@@ -89,3 +90,4 @@ exit
 umount -n -R /mnt 
 
 reboot
+```
